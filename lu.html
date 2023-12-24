@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Наше время вместе</title>
+</head>
+<body>
+    <h1>Мы в отношениях уже:</h1>
+    <p id="timer"></p>
+
+    <script>
+        // Замените эту дату на дату начала ваших отношений
+        var startDate = new Date("2021-12-14T00:00:00");
+
+        function updateTimer() {
+            var now = new Date();
+            var duration = now - startDate;
+            var seconds = Math.floor(duration / 1000);
+            var minutes = Math.floor(seconds / 60);
+            var hours = Math.floor(minutes / 60);
+            var days = Math.floor(hours / 24);
+            hours %= 24;
+            minutes %= 60;
+            seconds %= 60;
+
+            document.getElementById("timer").textContent = days + " дней, " + hours + " часов, " + minutes + " минут и " + seconds + " секунд";
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
